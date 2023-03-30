@@ -1,0 +1,8 @@
+{
+  "name": "recruitment-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react",
+  "id": "cb478906"
+}
