@@ -8,7 +8,8 @@ const Home: React.FC = () => {
     <IonPage>
       <IonContent fullscreen class="ion-padding">
         <IonText color="primary">
-          <h1 className="font-bold">Hidangan itu bisa menaikkan mood loh kak, ayo order sekarang...</h1>
+          <h1 className="font-bold">Hai, Selamat Datang di Resto App</h1>
+          <h3 className="font-bold">Hidangan itu bisa menaikkan mood loh kak, ayo order sekarang...</h3>
         </IonText>
 
         <br />

@@ -1,0 +1,16 @@
+.button-minplus {
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.gap-2 {
+  display: flex;
+}
+
+.text-md {
+  font-size: 1rem;
+}

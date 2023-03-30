@@ -3,12 +3,15 @@ import { createRoot } from 'react-dom/client';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
+import OrderStateContextProvider from './contexts/OrderStateContext';
 
 const container = document.getElementById('root');
 const root = createRoot(container!);
 root.render(
   <React.StrictMode>
-    <App />
+    <OrderStateContextProvider>
+      <App />
+    </OrderStateContextProvider>
   </React.StrictMode>
 );
 
