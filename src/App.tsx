@@ -3,6 +3,7 @@ import {
   IonApp,
   IonIcon,
   IonLabel,
+  IonNav,
   IonRouterOutlet,
   IonTabBar,
   IonTabButton,
@@ -10,7 +11,7 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { bag, ellipse, homeSharp, square, triangle } from 'ionicons/icons';
+import { bag, homeSharp } from 'ionicons/icons';
 import Home from './pages/Home';
 import Order from './pages/Order';
 
@@ -32,6 +33,8 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import Dish from './pages/Dish';
+import DetailDish from './pages/DetailDish';
 
 setupIonicReact();
 
@@ -46,9 +49,16 @@ const App: React.FC = () => (
           <Route exact path="/order">
             <Order />
           </Route>
+          <Route exact path="/dish">
+            <Dish />
+          </Route>
+          <Route exact path="/dish/:id">
+            <DetailDish />
+          </Route>
           <Route exact path="/">
             <Redirect to="/home" />
           </Route>
+          <IonNav root={() => <Home />}></IonNav>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           <IonTabButton tab="home" href="/home">

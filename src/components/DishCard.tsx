@@ -1,0 +1,26 @@
+import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/react'
+import React from 'react'
+
+type Props = {
+  name?: string
+}
+
+const DishCard = ({ name }: Props) => {
+  return (
+    <>
+      <IonCard href="/dish/1">
+        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+        <IonCardHeader>
+          <IonCardTitle>{name}</IonCardTitle>
+          <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+        </IonCardHeader>
+
+        <IonCardContent>
+          Here's a small text description for the card content. Nothing more, nothing less.
+        </IonCardContent>
+      </IonCard>
+    </>
+  )
+}
+
+export default DishCard

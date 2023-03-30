@@ -1,0 +1,9 @@
+.detail-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.text-bold {
+  font-weight: bold;
+}

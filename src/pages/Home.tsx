@@ -1,7 +1,11 @@
 import { IonContent, IonHeader, IonPage, IonText, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
 import Hightlight from '../components/Hightlight';
+
 import './Home.css';
+import './Order.css';
+import 'swiper/css';
+import '@ionic/react/css/ionic-swiper.css';
 
 const Home: React.FC = () => {
   return (
@@ -15,25 +19,25 @@ const Home: React.FC = () => {
         <br />
         <br />
         {/* Appetizer */}
-        <Hightlight title="Appetizer" />
+        <Hightlight title="Appetizer" category="appetizer" />
 
         {/* Main Course */}
-        <Hightlight title="Main Course" />
+        <Hightlight title="Main Course" category="main-course" />
 
         {/* Drink */}
-        <Hightlight title="Drink" />
+        <Hightlight title="Minuman" category="drink" />
 
         {/* Dessert */}
-        <Hightlight title="Dessert" />
+        <Hightlight title="Dessert" category="dessert" />
 
         {/* Soup and Salad */}
-        <Hightlight title="Soup and Salad" />
+        <Hightlight title="Sup dan Salad" category="soup-and-salad" />
 
         {/* Bread and Jam */}
-        <Hightlight title="Bread and Jam" />
+        <Hightlight title="Roti dan Salad" category="bread-and-jam" />
 
         {/* Others */}
-        <Hightlight title="Others" />
+        <Hightlight title="Lainnya" category="others" />
       </IonContent>
     </IonPage>
   );

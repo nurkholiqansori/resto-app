@@ -1,20 +1,40 @@
-import { IonButton, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonTitle } from '@ionic/react'
-import React, { Fragment } from 'react'
+import { IonButton, IonCard, IonCardHeader, IonCardTitle, IonGrid, IonLabel } from '@ionic/react'
+import { Fragment } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import DishCard from './DishCard'
 import './Hightlight.css'
 
 type Props = {
   title: string
   description?: string
+  category?: string
 }
 
-const Hightlight = ({ title, description }: Props) => {
+const Hightlight = ({ title, description, category }: Props) => {
+
   return (
     <Fragment>
-      <IonCard>
+      <IonCard style={{ boxShadow: "none" }}>
         <IonCardHeader>
-          <IonCardTitle>{title}</IonCardTitle>
-          <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+          <IonGrid className='flex'>
+            <IonCardTitle>{title}</IonCardTitle>
+            <IonButton color="primary" size="small" href={`dish?category=${category}`}>
+              <IonLabel className="ion-text-center" color="light">Lihat</IonLabel>
+            </IonButton>
+          </IonGrid>
+          {/* <IonCardSubtitle>Card Subtitle</IonCardSubtitle> */}
         </IonCardHeader>
+        <Swiper slidesPerView={1.5} loop={true}>
+          <SwiperSlide>
+            <DishCard name="Martabak" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <DishCard name="Cilok" />
+          </SwiperSlide>
+          <SwiperSlide>
+            <DishCard name="Pisang Coklat" />
+          </SwiperSlide>
+        </Swiper>
       </IonCard>
     </Fragment>
   )

@@ -14,3 +14,8 @@
 .text-md {
   font-size: 1rem;
 }
+
+.flex-order {
+  display: flex;
+  justify-content: end;
+}
