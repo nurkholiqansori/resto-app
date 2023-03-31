@@ -1,5 +1,3 @@
-import { BaseOrder } from "./contexts/OrderStateContext";
-
 export type disheshType = {
   id: number;
   name: string;
@@ -9,24 +7,6 @@ export type disheshType = {
   price: number;
   status: string;
 };
-
-const food: BaseOrder[] = [
-  {
-    name: "Martabak",
-    qty: 1,
-    price: 10000,
-  },
-  {
-    name: "Nasi Goreng",
-    qty: 1,
-    price: 10000,
-  },
-  {
-    name: "Nasi Uduk",
-    qty: 1,
-    price: 10000,
-  },
-];
 
 const dishes: disheshType[] = [
   {
