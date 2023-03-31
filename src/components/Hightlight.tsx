@@ -1,6 +1,7 @@
 import { IonButton, IonCard, IonCardHeader, IonCardTitle, IonGrid, IonLabel } from '@ionic/react'
 import { Fragment } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { disheshType } from '../data'
 import DishCard from './DishCard'
 import './Hightlight.css'
 
@@ -8,9 +9,10 @@ type Props = {
   title: string
   description?: string
   category?: string
+  data: disheshType[]
 }
 
-const Hightlight = ({ title, description, category }: Props) => {
+const Hightlight = ({ title, description, category, data }: Props) => {
 
   return (
     <Fragment>
@@ -25,15 +27,11 @@ const Hightlight = ({ title, description, category }: Props) => {
           {/* <IonCardSubtitle>Card Subtitle</IonCardSubtitle> */}
         </IonCardHeader>
         <Swiper slidesPerView={1.5} loop={true}>
-          <SwiperSlide>
-            <DishCard name="Martabak" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <DishCard name="Cilok" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <DishCard name="Pisang Coklat" />
-          </SwiperSlide>
+          {data.map((item, index) => (
+            <SwiperSlide key={index}>
+              <DishCard name={item.name} thumbnail={item.thumbnail} id={item.id} price={item.price} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </IonCard>
     </Fragment>

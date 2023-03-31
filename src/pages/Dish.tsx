@@ -1,6 +1,7 @@
 import { IonBackButton, IonButtons, IonCol, IonGrid, IonHeader, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react'
 import React from 'react'
 import DishCard from '../components/DishCard'
+import { dishes } from '../data';
 import { useQuery } from '../utils/useQuery';
 
 type Props = {}
@@ -36,6 +37,8 @@ const Dish: React.FC = (props: Props) => {
       break;
   }
 
+  const theDishes = dishes.filter((item) => item.category === nameDish) || []
+
   return (
     <IonPage style={{ backgroundColor: "white" }}>
       <IonHeader>
@@ -48,9 +51,10 @@ const Dish: React.FC = (props: Props) => {
       </IonHeader>
       <IonGrid>
         <IonRow>
-          <IonCol size="6" size-md="4" size-lg="2">
-            <DishCard name="Nasi Goreng" />
-          </IonCol>
+          {theDishes.map((item, index) => (
+            <IonCol key={index} size="6" size-md="4" size-lg="2">
+              <DishCard name={item.name} thumbnail={item.thumbnail} id={item.id} price={item.price} />
+            </IonCol>))}
         </IonRow>
       </IonGrid>
     </IonPage>

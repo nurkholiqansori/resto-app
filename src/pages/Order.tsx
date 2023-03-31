@@ -1,9 +1,13 @@
 import { IonButton, IonCard, IonCardContent, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonList, IonPage, IonText, IonTextarea, IonThumbnail, IonTitle, IonToolbar } from '@ionic/react';
 import { add, fastFoodOutline, golfOutline, remove, sendOutline } from 'ionicons/icons';
+import { useContext } from 'react';
 import ExploreContainer from '../components/ExploreContainer';
+import { OrderStateContext } from '../contexts/OrderStateContext';
 
 
 const Order: React.FC = () => {
+  const { order } = useContext(OrderStateContext);
+
   return (
     <IonPage>
       <IonHeader>
@@ -12,7 +16,7 @@ const Order: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        {/* <IonCard color="primary" style={{ color: "white" }} className="ion-padding">
+        <IonCard color="primary" style={{ color: "white" }} className="ion-padding">
           <IonTitle>Alur Pemesanan</IonTitle>
           <IonCardContent>
             <IonGrid className="ion-items-end flex-order">
@@ -33,8 +37,9 @@ const Order: React.FC = () => {
               </IonCol>
             </IonGrid>
           </IonCardContent>
-        </IonCard> */}
-        {/* <IonCard>
+        </IonCard>
+        {/* {order && order.length > 0 ? ( */}
+        <IonCard>
           <IonCardContent>
             <IonGrid className="ion-items-end flex-order">
               <IonButton color="light" className="button-minplus">
@@ -46,7 +51,7 @@ const Order: React.FC = () => {
                 <IonThumbnail slot="start">
                   <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
                 </IonThumbnail>
-                <IonLabel>Itemdddddddddddddddddddddddddddddddddddddddddddddddddd</IonLabel>
+                <IonLabel>Item</IonLabel>
                 <IonGrid className='ion-align-items-center gap-2'>
                   <IonButton color="light" className="button-minplus">
                     <IonIcon icon={remove} size="12" />
@@ -88,7 +93,17 @@ const Order: React.FC = () => {
               <IonLabel className="ion-text-center" color="light">Pesan</IonLabel>
             </IonButton>
           </IonCardContent>
-        </IonCard> */}
+        </IonCard>
+        {/* ) : (
+          <>
+            <IonHeader collapse="condense">
+              <IonToolbar>
+                <IonTitle size="large"></IonTitle>
+              </IonToolbar>
+            </IonHeader>
+            <ExploreContainer name="Silahkan pesan pesanan untuk melihat daftar pesanan" />
+          </>
+        )} */}
 
         {/* <IonCard>
           <IonCardContent>
@@ -96,13 +111,6 @@ const Order: React.FC = () => {
             <IonText>Gak selama menunggu mantan kok</IonText>
           </IonCardContent>
         </IonCard> */}
-
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large"></IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Silahkan pesan pesanan untuk melihat daftar pesanan" />
       </IonContent>
     </IonPage>
   );

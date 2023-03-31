@@ -2,21 +2,26 @@ import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle }
 import React from 'react'
 
 type Props = {
-  name?: string
+  name?: string,
+  thumbnail?: string
+  id?: number
+  price?: number
 }
 
-const DishCard = ({ name }: Props) => {
+const DishCard = ({ name, thumbnail, id, price }: Props) => {
   return (
     <>
-      <IonCard href="/dish/1">
-        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+      <IonCard href={`/dish/${id || 0}`}>
+        <div style={{ width: "100%" }}>
+          <img alt="Silhouette of mountains" src={thumbnail ? thumbnail : "https://ionicframework.com/docs/img/demos/card-media.png"} style={{ maxHeight: "200px", minHeight: "200px", width: "100%", objectFit: "cover" }} />
+        </div>
         <IonCardHeader>
           <IonCardTitle>{name}</IonCardTitle>
-          <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
+          <IonCardSubtitle>Rp. {price || 0}</IonCardSubtitle>
         </IonCardHeader>
 
         <IonCardContent>
-          Here's a small text description for the card content. Nothing more, nothing less.
+
         </IonCardContent>
       </IonCard>
     </>
